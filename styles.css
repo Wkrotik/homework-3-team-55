@@ -22,7 +22,7 @@
 }
 
 body {
-    background-color: var(--gruvbox-bg);
+    background-color: white;
 }
 
 .TopMenu{
@@ -31,13 +31,14 @@ body {
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: var(--gruvbox-bg);
-    color: var(--gruvbox-fg);
+    background-color: white;
+    color: var(--ada-blue);
     z-index: 10;
     position: fixed;
     width: 95%;
     height: 70px;
     top: 0;
+    border-bottom: gray 1px solid;
 }
 
 #logo{
@@ -48,7 +49,7 @@ body {
 
 .About-Us{
     margin-top: 90px;
-    color: var(--gruvbox-fg);
+    color: var(--ada-blue);
 }
 
 .About-Us h2{
@@ -57,6 +58,9 @@ body {
 }
 .About-Us p{
     font-size: 20px;
+    width: 600px;
+    text-align: center;
+    margin: auto;
 }
 
 /* this is the main container for the members */
@@ -80,19 +84,25 @@ body {
 
 /* more specific attributes for each member */
 #Mubariz{
-    background-color: var(--gruvbox-green);
+    background-image: url("/media/human.jpg");
+    background-size: cover;
+    background-position: 23% 30%;
 }
 
 #Aykhan{
-    background-color: var(--gruvbox-yellow);
+    background-image: url("/media/human.jpg");
+    background-size: cover;
+    background-position: 23% 30%;
 }
 
 #Rubaba{
-    background-color: var(--gruvbox-red);
-    color: var(--whiteish);
+    background-image: url("/media/human.jpg");
+    background-size: cover;
+    background-position: 23% 30%;
 }
 
 #Arhan{
-    background-color: var(--gruvbox-blue);
-    color: var(--whiteish);
+    background-image: url("/media/human.jpg");
+    background-size: cover;
+    background-position: 23% 30%;
 }
