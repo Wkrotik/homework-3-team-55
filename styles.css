@@ -1,22 +1,62 @@
 :root {
     --ada-blue: #336178;
     --ada-red: #ae485e;
-    --pastel-yellow: #f2cc8f;
-    --pastel-green: #81b29a;
-    --pastel-red: #e07a5f;
-    --whiteish: #f4f1de;
-    --dark-blueish: #3d405b;
+    --gruvbox-bg: #282828;
+    --gruvbox-fg: #ebdbb2;
+    --gruvbox-red: #fb4934;
+    --gruvbox-green: #b8bb26;
+    --gruvbox-yellow: #fabd2f;
+    --gruvbox-blue: #83a598;
+    --gruvbox-purple: #d3869b;
+    --gruvbox-aqua: #8ec07c;
+    --gruvbox-gray: #a89984;
+    --gruvbox-dark-red: #cc241d;
+    --gruvbox-dark-green: #98971a;
+    --gruvbox-dark-yellow: #d79921;
+    --gruvbox-dark-blue: #458588;
+    --gruvbox-dark-purple: #b16286;
+    --gruvbox-dark-aqua: #689d6a;
+    --gruvbox-dark-gray: #928374;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: var(--whiteish);
+    background-color: var(--gruvbox-bg);
 }
 
-h1 {
-    color: var(--dark-blueish);
+.TopMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--gruvbox-bg);
+    color: var(--gruvbox-fg);
+    z-index: 10;
+    position: fixed;
+    width: 95%;
+    height: 70px;
+    top: 0;
+}
+
+#logo{
+    width: 100px;
+    height: auto;
+    display: inherit;
+}
+
+.About-Us{
+    margin-top: 90px;
+    color: var(--gruvbox-fg);
+}
+
+.About-Us h2{
+    font-size: 30px;
     text-align: center;
+}
+.About-Us p{
+    font-size: 20px;
 }
 
 /* this is the main container for the members */
@@ -40,19 +80,19 @@ h1 {
 
 /* more specific attributes for each member */
 #Mubariz{
-    background-color: var(--pastel-green);
+    background-color: var(--gruvbox-green);
 }
 
 #Aykhan{
-    background-color: var(--pastel-yellow);
+    background-color: var(--gruvbox-yellow);
 }
 
 #Rubaba{
-    background-color: var(--pastel-red);
+    background-color: var(--gruvbox-red);
     color: var(--whiteish);
 }
 
 #Arhan{
-    background-color: var(--ada-blue);
+    background-color: var(--gruvbox-blue);
     color: var(--whiteish);
 }
