@@ -53,14 +53,55 @@ body {
 }
 
 .About-Us h2{
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
+    display: block
 }
 .About-Us p{
     font-size: 20px;
-    width: 600px;
+    max-width: 1100px;
+    min-width: 600px;
     text-align: center;
     margin: auto;
+
+}
+
+.projects li{
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--ada-blue);
+    color: white;
+    font-size: 20px;
+    width: 300px;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+}
+
+.project a {
+    color: white; 
+    text-decoration: none;      
+    font-weight: bold;         
+    text-align: center;
+}
+.projects a:hover {
+    color: var(--gruvbox-purple);   
+    text-decoration: underline;      
+}
+
+
+.projects a:visited {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#team-text{
+    margin-top: 20px;
+    font-size: 40px;
+    color: var(--ada-blue);
+    text-align: center;
 }
 
 /* this is the main container for the members */
@@ -80,29 +121,27 @@ body {
     text-align: inherit;
     color: var(--dark-blueish); 
     margin: 10px 10px 0 0;
+    border-radius: 3%;
+    background-size: cover;
 }
 
 /* more specific attributes for each member */
 #Mubariz{
     background-image: url("/media/human.jpg");
-    background-size: cover;
     background-position: 23% 30%;
 }
 
 #Aykhan{
     background-image: url("/media/human.jpg");
-    background-size: cover;
     background-position: 23% 30%;
 }
 
 #Rubaba{
     background-image: url("/media/human.jpg");
-    background-size: cover;
     background-position: 23% 30%;
 }
 
 #Arhan{
     background-image: url("/media/human.jpg");
-    background-size: cover;
     background-position: 23% 30%;
 }
