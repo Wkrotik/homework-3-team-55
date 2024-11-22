@@ -51,6 +51,26 @@ function DrawSpiral(context) {
 drawBrawlStarsLogo = (context) => {
     x = context.canvas.width / 2;
     y = context.canvas.height / 2;
+    context.fillStyle = 'rgb(0, 0, 0)';
     context.arc(x, y, 400, 0, radian(360));
-    context.fill()
+    context.fill();
+    context.strokeStyle = 'rgb(250, 188, 36)';
+    context.fillStyle = 'rgb(250, 188, 36)';
+    context.beginPath();
+    context.arc(x, y, 345, radian(196), radian(8));
+    context.stroke();
+    context.fill();
+    x_startingPoint = x + 345 * Math.cos(radian(196));
+    y_startingPoint = y + 345 * Math.sin(radian(196));
+    x_endPoint = x + 345 * Math.cos(radian(8));
+    y_endPoint = y + 345 * Math.sin(radian(8));
+    x_controlPoint1 = x + 510 * Math.cos(radian(148));
+    y_controlPoint1 = y + 510 * Math.sin(radian(148));
+    x_controlPoint2 = x + 510 * Math.cos(radian(56));
+    y_controlPoint2 = y + 510 * Math.sin(radian(56));
+    context.moveTo(x_startingPoint, y_startingPoint);
+    context.beginPath;
+    context.bezierCurveTo(x_controlPoint1, y_controlPoint1, x_controlPoint2, y_controlPoint2, x_endPoint, y_endPoint);
+    context.stroke();
+    context.fill();
 }
