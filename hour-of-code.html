@@ -6,11 +6,47 @@
 -->
 <html>
     <head>
-        <title>Homework 3: Hour of Code event</title>
+        <title>Hour of Code</title>
         <link rel="stylesheet" href="styles.css">  
         <script type="text/javascript" src="scripts.js"></script>      
     </head>
-    <body>
-        #Homework 3: How websites work?
-    </body>
-</html>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hour of Code</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+<body>
+    <h1>Hour of Code</h1>
+    <div class="card-container">
+
+        <div class="card" 
+            onmouseover="flipCardOnHover(this)" 
+            onmouseout="revertCard(this)">
+            <div class="card-face front">
+                <h2>What is the Hour of Code?</h2>
+            </div>
+            <div class="card-face back">
+                <p>
+                    The Hour of Code is a global movement that introduces students of all ages to the basics of computer science. With fun, one-hour coding activities, it aims to demystify coding and show that anyone can learn the fundamentals, sparking interest and curiosity in the tech world.
+                </p>
+            </div>
+        </div>
+
+        
+        <div class="card" 
+            onmouseover="flipCardOnHover(this)" 
+            onmouseout="revertCard(this)">
+            <div class="card-face front">
+                <h2>How We Organized It</h2>
+            </div>
+            <div class="card-face back">
+                <p>
+                Our team planned and facilitated the Hour of Code event for school students, creating engaging activities that introduced them to the basics of computer science. We provided personalized guidance and support, creating an inclusive and interactive learning environment that encouraged students to explore coding and develop their tech skills.
+                </p>
+            </div>
+        </div>
+    </div>
+    <img src="media/logo.png" alt="Logo" class="logo">
+   </body>
