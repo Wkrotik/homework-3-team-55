@@ -47,3 +47,10 @@ function DrawSpiral(context) {
         turnRight(89);
     }
 }
+
+drawBrawlStarsLogo = (context) => {
+    x = context.canvas.width / 2;
+    y = context.canvas.height / 2;
+    context.arc(x, y, 400, 0, radian(360));
+    context.fill()
+}
