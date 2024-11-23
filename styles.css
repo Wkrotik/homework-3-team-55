@@ -22,7 +22,21 @@
 }
 
 body {
-    background-color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    min-height: 100vh; 
+    text-align: justify;
+}
+
+h2{
+    color: var(--ada-red);
+    font-size: 35px;
+    text-align: center;
 }
 
 .TopMenu{
@@ -144,4 +158,123 @@ body {
 #Arhan{
     background-image: url("/media/human.jpg");
     background-position: 23% 30%;
+}
+
+
+h1 {
+    font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ada-red);
+    margin: 0;
+    padding-top: 20px; }
+
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px; 
+    width: 80%; 
+    gap: 10px; }
+
+
+.card {
+    width: 40%; 
+    height: 400px; 
+    perspective: 1000px; 
+    cursor: pointer; 
+    transition: transform 0.4s; 
+}
+
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.4s;
+}
+
+.front {
+    background-color: var(--ada-blue);
+    color: #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 2.5em; 
+    
+}
+
+.back {
+    background-color:var(--ada-red);
+    color: #ffffff;
+    transform: rotateY(180deg); 
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.5rem; 
+}
+
+
+.card.flipped .front {
+    transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+    transform: rotateY(0deg);
+}
+.logo {
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+    width: 100px; 
+    height: auto; 
+}
+.photos-section {
+    margin-top: 50px;
+    text-align: center;
+    width: 80%;
+}
+
+.photos-section h2 {
+    font-size: 2.5rem;
+    color: var(--ada-red);
+    margin-bottom: 20px;
+}
+
+.photos-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap; /* Adjust layout for smaller screens */
+}
+
+.photo {
+    width: 30%; /* Adjust to fit three photos side by side */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--ada-blue);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.photo p {
+    font-size: 1.2rem;
+    color: var(--ada-blue);
+}
+
+.details p {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif; 
+text-align: center;
 }

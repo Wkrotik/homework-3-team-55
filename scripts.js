@@ -4,8 +4,6 @@
     DISCLAIMER: All code examples we will look at are quick hacks intended to present working prototypes.
     Hence they do not follow best practice of programming or software engineering.    
 */
-
-// Global variables for Artist's position and orientation
 var x, y;
 var angle;
 
@@ -46,4 +44,11 @@ function DrawSpiral(context) {
         context.stroke();
         turnRight(89);
     }
+}
+
+function flipCardOnHover(card) {
+    card.classList.add('flipped'); 
+}
+function revertCard(card) {
+    card.classList.remove('flipped'); 
 }
