@@ -1,3 +1,10 @@
+function flipCardOnHover(card) {
+    card.classList.add('flipped'); 
+}
+function revertCard(card) {
+    card.classList.remove('flipped'); 
+}
+
 let x, y;
 let x_center;
 let y_center;
@@ -152,11 +159,4 @@ const drawBrawlStarsLogo = (context) => {
     context.closePath();
     context.stroke();
     context.fill();
-}
-
-function flipCardOnHover(card) {
-    card.classList.add('flipped'); 
-}
-function revertCard(card) {
-    card.classList.remove('flipped'); 
 }
