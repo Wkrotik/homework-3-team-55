@@ -141,6 +141,15 @@ const drawBrawlStarsLogo = (context) => {
         continueArc(x, y, 22, 59 + 180 * i, 239 - 180 * i, 59 + 180 * i, false);
         moveDest(x, y, 22, 59 + 180 * i);
     }
+    context.closePath();
+    context.stroke();
+    context.fill();
+    context.strokeStyle = 'rgb(255, 255, 255)';
+    context.fillStyle = 'rgb(255, 255, 255)';
+    context.beginPath();
+    DestDefine(x_center, y_center, 250, 250);
+    context.ellipse(x, y, 120, 75, radian(340), 0, radian(360), false)
+    context.closePath();
     context.stroke();
     context.fill();
 }
