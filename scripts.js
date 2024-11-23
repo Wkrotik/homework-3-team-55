@@ -22,7 +22,7 @@ const radian = (degree) => degree * Math.PI / 180;
 const xDefine = (x_origin, distance, degree) => x_origin + distance * Math.cos(radian(degree));
 const yDefine = (y_origin, distance, degree) => y_origin + distance * Math.sin(radian(degree));
 
-const DestDefine = (x_origin,y_origin, distance, degree) => {
+const DestDefine = (x_origin, y_origin, distance, degree) => {
     x = xDefine(x_origin, distance, degree);
     y = yDefine(y_origin, distance, degree);
 }
@@ -74,7 +74,9 @@ const drawBrawlStarsLogo = (context) => {
     x_center = context.canvas.width / 2;
     y_center = context.canvas.height / 2;
     context.fillStyle = 'rgb(0, 0, 0)';
+    context.beginPath();
     context.arc(x_center, y_center, 400, 0, radian(360));
+    context.closePath();
     context.fill();
     context.strokeStyle = 'rgb(250, 188, 36)';
     context.fillStyle = 'rgb(250, 188, 36)';
@@ -101,7 +103,44 @@ const drawBrawlStarsLogo = (context) => {
     x = xDefine(310, 140);
     y = yDefine(260, 140);
     context.lineTo(x, y);
-    
+    context.closePath();
+    context.stroke();
+    context.fill();
+    context.strokeStyle = 'rgb(0, 0, 0)';
+    context.fillStyle = 'rgb(0, 0, 0)';
+    context.beginPath();
+    DestDefine(x_center, y_center, 165, 176);
+    context.arc(x, y, 105, 0, radian(360));
+    moveDest(x_center, y_center, 165, 28);
+    DestDefine(x_center, y_center, 165, 28);
+    context.arc(x, y, 105, 0, radian(360));
+    context.closePath();
+    context.stroke();
+    context.fill();
+    context.beginPath();
+    moveDest(x_center, y_center, 90, 102);
+    lineDest(x, y, 100, 72);
+    lineDest(x, y, 100, 192);
+    context.closePath();
+    context.stroke();
+    context.fill();
+    context.beginPath();
+    moveDest(x_center, y_center, 73, 255);
+    for (let i = 0; i <= 1; i++) {
+        lineDest(x, y, 67, 235 - 180 * i)
+        continueArc(x, y, 22, 145 + 180 * i, 325 - 180 * i, 145 + 180 * i, true);
+        moveDest(x, y, 22, 145 + 180 * i);
+    }
+    context.closePath();
+    context.stroke();
+    context.fill();
+    context.beginPath();
+    moveDest(x_center, y_center, 73, 309);
+    for (let i = 0; i <= 1; i++) {
+        lineDest(x, y, 67, 329 - 180 * i)
+        continueArc(x, y, 22, 59 + 180 * i, 239 - 180 * i, 59 + 180 * i, false);
+        moveDest(x, y, 22, 59 + 180 * i);
+    }
     context.stroke();
     context.fill();
 }
