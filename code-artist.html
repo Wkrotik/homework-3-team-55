@@ -11,9 +11,8 @@
         <script type="text/javascript" src="scripts.js"></script>      
     </head>
     <body>
-        #Homework 3: How websites work?
         <div style="text-align:center">
-            <canvas id="art-canvas" width="640" height="480">
+            <canvas id="art-canvas" width="1000" height="1000">
                 Sorry ... your browser doesn't support the HTML5 canvas element.
             </canvas>        
         </div>          
@@ -24,8 +23,9 @@
             let context = canvas.getContext("2d");
             // Set the color for drawing lines using red, green and blue components
             // context.strokeStyle = 'rgb(255, 0, 0)';
-            context.strokeStyle = `rgb(${255 * Math.random()}, ${255 * Math.random()}, ${255 * Math.random()})`;
-            DrawSpiral(context);
+            /* context.strokeStyle = `rgb(${255 * Math.random()}, ${255 * Math.random()}, ${255 * Math.random()})`;
+            DrawSpiral(context); */
+            drawBrawlStarsLogo(context);
         </script>
     </body>
 </html>
