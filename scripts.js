@@ -104,6 +104,12 @@ const drawBrawlStarsLogo = (context) => {
     backgroundDrawCorner(1000, 0, 500, 0, 1000, 200, 'rgb(254,226,91)');
     backgroundDrawSide(1000, 200, 1000, 800, 'rgb(255,184,32)')
     backgroundDrawSide(0, 200, 0, 800, 'rgb(254,226,91)')
+    context.fillStyle = 'rgb(254,226,91)';
+    context.beginPath();
+    DestDefine(x_center, y_center, 35, 110);
+    context.arc(x, y, 400, 0, radian(360));
+    context.closePath();
+    context.fill(); 
     context.fillStyle = 'rgb(0, 0, 0)';
     context.beginPath();
     context.arc(x_center, y_center, 400, 0, radian(360));
