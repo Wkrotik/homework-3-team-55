@@ -55,6 +55,12 @@ h2{
     border-bottom: gray 1px solid;
 }
 
+.TopMenu p{
+    font-size: 40px;
+    color: var(--ada-red);
+    font-weight: bold;
+}
+
 #logo{
     width: 100px;
     height: auto;
@@ -134,7 +140,7 @@ h2{
     height: 300px;
     text-align: inherit;
     color: var(--dark-blueish); 
-    margin: 10px 10px 0 0;
+    margin: 10px 20px 0 0;
     border-radius: 3%;
     background-size: cover;
 }
