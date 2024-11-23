@@ -10,15 +10,159 @@
     padding: 0;
 }
 body {
-    font-family: 'Cascadia Code', monospace;
-    background-color: var(--whiteish);
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
     margin: 0;
     padding: 20px;
     display: flex;
     flex-direction: column; 
     align-items: center; 
     min-height: 100vh; 
+    text-align: justify;
+}
+:root {
+    --ada-blue: #336178;
+    --ada-red: #ae485e;
+    --gruvbox-bg: #282828;
+    --gruvbox-fg: #ebdbb2;
+    --gruvbox-red: #fb4934;
+    --gruvbox-green: #b8bb26;
+    --gruvbox-yellow: #fabd2f;
+    --gruvbox-blue: #83a598;
+    --gruvbox-purple: #d3869b;
+    --gruvbox-aqua: #8ec07c;
+    --gruvbox-gray: #a89984;
+    --gruvbox-dark-red: #cc241d;
+    --gruvbox-dark-green: #98971a;
+    --gruvbox-dark-yellow: #d79921;
+    --gruvbox-dark-blue: #458588;
+    --gruvbox-dark-purple: #b16286;
+    --gruvbox-dark-aqua: #689d6a;
+    --gruvbox-dark-gray: #928374;
+    margin: 0;
+    padding: 0;
+}
+
+
+.TopMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    color: var(--ada-blue);
+    z-index: 10;
+    position: fixed;
+    width: 95%;
+    height: 70px;
+    top: 0;
+    border-bottom: gray 1px solid;
+}
+
+#logo{
+    width: 100px;
+    height: auto;
+    display: inherit;
+}
+
+.About-Us{
+    margin-top: 90px;
+    color: var(--ada-blue);
+}
+
+.About-Us h2{
+    font-size: 40px;
     text-align: center;
+    display: block
+}
+.About-Us p{
+    font-size: 20px;
+    max-width: 1100px;
+    min-width: 600px;
+    text-align: center;
+    margin: auto;
+
+}
+
+.projects li{
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--ada-blue);
+    color: white;
+    font-size: 20px;
+    width: 300px;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+}
+
+.project a {
+    color: white; 
+    text-decoration: none;      
+    font-weight: bold;         
+    text-align: center;
+}
+.projects a:hover {
+    color: var(--gruvbox-purple);   
+    text-decoration: underline;      
+}
+
+
+.projects a:visited {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#team-text{
+    margin-top: 20px;
+    font-size: 40px;
+    color: var(--ada-blue);
+    text-align: center;
+}
+
+/* this is the main container for the members */
+.Members{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+#Mubariz, #Aykhan, #Rubaba, #Arhan{
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    vertical-align: middle;
+    width: 200px;
+    height: 300px;
+    text-align: inherit;
+    color: var(--dark-blueish); 
+    margin: 10px 10px 0 0;
+    border-radius: 3%;
+    background-size: cover;
+}
+
+/* more specific attributes for each member */
+#Mubariz{
+    background-image: url("/media/human.jpg");
+    background-position: 23% 30%;
+}
+
+#Aykhan{
+    background-image: url("/media/human.jpg");
+    background-position: 23% 30%;
+}
+
+#Rubaba{
+    background-image: url("/media/human.jpg");
+    background-position: 23% 30%;
+}
+
+#Arhan{
+    background-image: url("/media/human.jpg");
+    background-position: 23% 30%;
 }
 
 
@@ -60,16 +204,16 @@ h1 {
 
 .front {
     background-color: var(--ada-blue);
-    color: var(--whiteish);
+    color: #ffffff;
     border-radius: 8px;
     text-align: center;
-    font-size: 2.0em; 
+    font-size: 2.5em; 
     
 }
 
 .back {
     background-color:var(--ada-red);
-    color: var(--whiteish);
+    color: #ffffff;
     transform: rotateY(180deg); 
     border-radius: 8px;
     text-align: center;
@@ -91,4 +235,49 @@ h1 {
     width: 100px; 
     height: auto; 
 }
+.photos-section {
+    margin-top: 50px;
+    text-align: center;
+    width: 80%;
+}
+
+.photos-section h2 {
+    font-size: 2.5rem;
+    color: var(--ada-red);
+    margin-bottom: 20px;
+}
+
+.photos-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap; /* Adjust layout for smaller screens */
+}
+
+.photo {
+    width: 30%; /* Adjust to fit three photos side by side */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--ada-blue);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.photo p {
+    font-size: 1.2rem;
+    color: var(--ada-blue);
+}
+
+p {font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif; 
+text-align: center;}
 
