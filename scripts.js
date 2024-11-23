@@ -1,10 +1,10 @@
-function flipCardOnHover(card) {
-    card.classList.add('flipped'); 
-}
-function revertCard(card) {
-    card.classList.remove('flipped'); 
-}
+// Function to add a 'flipped' class to a card when hovered over
+const flipCardOnHover = (card) => card.classList.add('flipped');
 
+// Function to remove the 'flipped' class from a card
+const revertCard = (card) => card.classList.remove('flipped');
+
+// Declare variables for canvas coordinates and control points
 let x, y;
 let x_center;
 let y_center;
@@ -17,30 +17,40 @@ let y_controlPoint1;
 let x_controlPoint2;
 let y_controlPoint2;
 
+// Utility function to convert degrees to radians
 const radian = (degree) => degree * Math.PI / 180;
+
+// Function to calculate the x-coordinate based on distance and angle
 const xDefine = (x_origin, distance, degree) => x_origin + distance * Math.cos(radian(degree));
+
+// Function to calculate the y-coordinate based on distance and angle
 const yDefine = (y_origin, distance, degree) => y_origin + distance * Math.sin(radian(degree));
 
+// Function to set destination x and y coordinates based on origin, distance, and angle
 const DestDefine = (x_origin, y_origin, distance, degree) => {
     x = xDefine(x_origin, distance, degree);
     y = yDefine(y_origin, distance, degree);
 }
 
+// Function to draw a line from the current position to the destination
 const lineDest = (x_origin, y_origin, distance, degree) => {
     DestDefine(x_origin, y_origin, distance, degree);
     context.lineTo(x, y);    
 } 
 
+// Function to move the drawing cursor to the destination without drawing a line
 const moveDest = (x_origin, y_origin, distance, degree) => {
     DestDefine(x_origin, y_origin, distance, degree);
     context.moveTo(x, y);    
 } 
 
+// Function to draw an arc using a radius and angles, starting at a calculated destination
 const continueArc = (x_origin, y_origin, radius, degree, angle_1, angle_2, counterclockwise) => {
     DestDefine(x_origin, y_origin, radius, degree);
     context.arc(x, y, radius, radian(angle_1), radian(angle_2), counterclockwise);    
 } 
 
+// Function to draw a corner-shaped background with a specific color
 const backgroundDrawCorner = (x1, y1, x2, y2, x3, y3, color) => {
     chooseColor(color);
     context.moveTo(x1, y1);
@@ -50,6 +60,7 @@ const backgroundDrawCorner = (x1, y1, x2, y2, x3, y3, color) => {
     newPath();
 }
 
+// Function to draw a side-shaped background with a specific color
 const backgroundDrawSide = (x1, y1, x2, y2, color) => {
     chooseColor(color);
     context.moveTo(x1, y1);
@@ -58,11 +69,13 @@ const backgroundDrawSide = (x1, y1, x2, y2, color) => {
     newPath();
 }
 
+// Function to set the current fill and stroke color
 const chooseColor = (color) => {
     context.fillStyle = color;
     context.strokeStyle = color;
 }
 
+// Function to complete the current path, apply the stroke and fill, and start a new path
 const newPath = () => {
     context.closePath();
     context.stroke();
@@ -70,22 +83,30 @@ const newPath = () => {
     context.beginPath();
 }
 
+// Main function to draw the Brawl Stars logo
 const drawBrawlStarsLogo = (context) => {
+    // Set the center coordinates of the canvas
     x_center = context.canvas.width / 2;
     y_center = context.canvas.height / 2;
+    // Start drawing the logo
     context.beginPath();
+    // Draw orange corners for the background
     backgroundDrawCorner(1000, 1000, 500, 1000, 1000, 800, 'rgb(232,116,43)');
     backgroundDrawCorner(0, 1000, 500, 1000, 0, 800, 'rgb(255,184,32)');
     backgroundDrawCorner(1000, 0, 500, 0, 1000, 200, 'rgb(254,226,91)');
+    // Draw orange sides for the background
     backgroundDrawSide(1000, 200, 1000, 800, 'rgb(255,184,32)');
     backgroundDrawSide(0, 200, 0, 800, 'rgb(254,226,91)');
+    // Draw a "glare" part at the bottom (which creates 3D effect), the circle is covered by the black circle created later
     chooseColor('rgb(254,226,91)');
     DestDefine(x_center, y_center, 35, 110);
     context.arc(x, y, 400, 0, radian(360));
     newPath();
+    // Draw a black circular border
     chooseColor('rgb(0, 0, 0)');
     context.arc(x_center, y_center, 400, 0, radian(360));
     newPath();
+    // Draw the skull (without jaw)
     chooseColor('rgb(250, 188, 36)')
     context.arc(x_center, y_center, 345, radian(196), radian(8));
     moveDest(x_center, y_center, 345, 196);
@@ -96,6 +117,7 @@ const drawBrawlStarsLogo = (context) => {
     x_controlPoint2 = xDefine(x_center, 510, 56);
     y_controlPoint2 = yDefine(y_center, 510, 56);
     context.bezierCurveTo(x_controlPoint1, y_controlPoint1, x_controlPoint2, y_controlPoint2, x_endPoint, y_endPoint);
+    // Draw the jaw part
     x = xDefine(x_center, 310, 140);
     y = yDefine(y_center, 260, 140);
     context.moveTo(x, y);
@@ -109,6 +131,7 @@ const drawBrawlStarsLogo = (context) => {
     x = xDefine(310, 140);
     y = yDefine(260, 140);
     context.lineTo(x, y);
+    // Draw a pair of eyes
     newPath();
     chooseColor('rgb(0, 0, 0)');
     DestDefine(x_center, y_center, 165, 176);
@@ -116,10 +139,12 @@ const drawBrawlStarsLogo = (context) => {
     moveDest(x_center, y_center, 165, 28);
     DestDefine(x_center, y_center, 165, 28);
     context.arc(x, y, 105, 0, radian(360));
+    // Draw a nose
     newPath();
     moveDest(x_center, y_center, 90, 102);
     lineDest(x, y, 100, 72);
     lineDest(x, y, 100, 192);
+    // Draw eyebrows 
     newPath();
     moveDest(x_center, y_center, 73, 255);
     for (let i = 0; i <= 1; i++) {
@@ -134,6 +159,7 @@ const drawBrawlStarsLogo = (context) => {
         continueArc(x, y, 22, 59 + 180 * i, 239 - 180 * i, 59 + 180 * i, false);
         moveDest(x, y, 22, 59 + 180 * i);
     }
+    // Draw the "glare" of the skull with the white ellipse
     newPath();
     chooseColor('rgb(255, 255, 255)');
     DestDefine(x_center, y_center, 250, 250);
