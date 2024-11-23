@@ -132,6 +132,22 @@ const drawBrawlStarsLogo = (context) => {
     context.stroke();
     context.fill();
     context.beginPath();
+    DestDefine(x_center, y_center, 165, 176);
+    context.arc(x, y, 105, 0, radian(360));
+    moveDest(x_center, y_center, 165, 28);
+    DestDefine(x_center, y_center, 165, 28);
+    context.arc(x, y, 105, 0, radian(360));
+    context.closePath();
+    context.stroke();
+    context.fill();
+    context.beginPath();
+    moveDest(x_center, y_center, 90, 102);
+    lineDest(x, y, 100, 72);
+    lineDest(x, y, 100, 192);
+    context.closePath();
+    context.stroke();
+    context.fill();
+    context.beginPath();
     moveDest(x_center, y_center, 73, 255);
     for (let i = 0; i <= 1; i++) {
         lineDest(x, y, 67, 235 - 180 * i)
@@ -159,4 +175,9 @@ const drawBrawlStarsLogo = (context) => {
     context.closePath();
     context.stroke();
     context.fill();
+}
+
+function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
