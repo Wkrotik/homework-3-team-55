@@ -42,52 +42,51 @@ const continueArc = (x_origin, y_origin, radius, degree, angle_1, angle_2, count
 } 
 
 const backgroundDrawCorner = (x1, y1, x2, y2, x3, y3, color) => {
-    context.strokeStyle = color;
-    context.fillStyle = color;
-    context.beginPath();
+    chooseColor(color);
     context.moveTo(x1, y1);
     context.lineTo(x2, y2);
     context.lineTo(x_center, y_center);
     context.lineTo(x3, y3);
-    context.closePath();
-    context.stroke();
-    context.fill();
+    newPath();
 }
 
 const backgroundDrawSide = (x1, y1, x2, y2, color) => {
-    context.strokeStyle = color;
-    context.fillStyle = color;
-    context.beginPath();
+    chooseColor(color);
     context.moveTo(x1, y1);
     context.lineTo(x_center, y_center);
     context.lineTo(x2, y2);
+    newPath();
+}
+
+const chooseColor = (color) => {
+    context.fillStyle = color;
+    context.strokeStyle = color;
+}
+
+const newPath = () => {
     context.closePath();
     context.stroke();
     context.fill();
+    context.beginPath();
 }
 
 const drawBrawlStarsLogo = (context) => {
     x_center = context.canvas.width / 2;
     y_center = context.canvas.height / 2;
+    context.beginPath();
     backgroundDrawCorner(1000, 1000, 500, 1000, 1000, 800, 'rgb(232,116,43)');
     backgroundDrawCorner(0, 1000, 500, 1000, 0, 800, 'rgb(255,184,32)');
     backgroundDrawCorner(1000, 0, 500, 0, 1000, 200, 'rgb(254,226,91)');
-    backgroundDrawSide(1000, 200, 1000, 800, 'rgb(255,184,32)')
-    backgroundDrawSide(0, 200, 0, 800, 'rgb(254,226,91)')
-    context.fillStyle = 'rgb(254,226,91)';
-    context.beginPath();
+    backgroundDrawSide(1000, 200, 1000, 800, 'rgb(255,184,32)');
+    backgroundDrawSide(0, 200, 0, 800, 'rgb(254,226,91)');
+    chooseColor('rgb(254,226,91)');
     DestDefine(x_center, y_center, 35, 110);
     context.arc(x, y, 400, 0, radian(360));
-    context.closePath();
-    context.fill(); 
-    context.fillStyle = 'rgb(0, 0, 0)';
-    context.beginPath();
+    newPath();
+    chooseColor('rgb(0, 0, 0)');
     context.arc(x_center, y_center, 400, 0, radian(360));
-    context.closePath();
-    context.fill();
-    context.strokeStyle = 'rgb(250, 188, 36)';
-    context.fillStyle = 'rgb(250, 188, 36)';
-    context.beginPath();
+    newPath();
+    chooseColor('rgb(250, 188, 36)')
     context.arc(x_center, y_center, 345, radian(196), radian(8));
     moveDest(x_center, y_center, 345, 196);
     x_endPoint = xDefine(x_center, 345, 8);
@@ -110,50 +109,33 @@ const drawBrawlStarsLogo = (context) => {
     x = xDefine(310, 140);
     y = yDefine(260, 140);
     context.lineTo(x, y);
-    context.closePath();
-    context.stroke();
-    context.fill();
-    context.strokeStyle = 'rgb(0, 0, 0)';
-    context.fillStyle = 'rgb(0, 0, 0)';
-    context.beginPath();
+    newPath();
+    chooseColor('rgb(0, 0, 0)');
     DestDefine(x_center, y_center, 165, 176);
     context.arc(x, y, 105, 0, radian(360));
     moveDest(x_center, y_center, 165, 28);
     DestDefine(x_center, y_center, 165, 28);
     context.arc(x, y, 105, 0, radian(360));
-    context.closePath();
-    context.stroke();
-    context.fill();
-    context.beginPath();
+    newPath();
     moveDest(x_center, y_center, 90, 102);
     lineDest(x, y, 100, 72);
     lineDest(x, y, 100, 192);
-    context.closePath();
-    context.stroke();
-    context.fill();
-    context.beginPath();
+    newPath();
     moveDest(x_center, y_center, 73, 255);
     for (let i = 0; i <= 1; i++) {
         lineDest(x, y, 67, 235 - 180 * i)
         continueArc(x, y, 22, 145 + 180 * i, 325 - 180 * i, 145 + 180 * i, true);
         moveDest(x, y, 22, 145 + 180 * i);
     }
-    context.closePath();
-    context.stroke();
-    context.fill();
-    context.beginPath();
+    newPath();
     moveDest(x_center, y_center, 73, 309);
     for (let i = 0; i <= 1; i++) {
         lineDest(x, y, 67, 329 - 180 * i)
         continueArc(x, y, 22, 59 + 180 * i, 239 - 180 * i, 59 + 180 * i, false);
         moveDest(x, y, 22, 59 + 180 * i);
     }
-    context.closePath();
-    context.stroke();
-    context.fill();
-    context.strokeStyle = 'rgb(255, 255, 255)';
-    context.fillStyle = 'rgb(255, 255, 255)';
-    context.beginPath();
+    newPath();
+    chooseColor('rgb(255, 255, 255)');
     DestDefine(x_center, y_center, 250, 250);
     context.ellipse(x, y, 120, 75, radian(340), 0, radian(360), false)
     context.closePath();
