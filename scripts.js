@@ -42,6 +42,32 @@ const continueArc = (x_origin, y_origin, radius, degree, angle_1, angle_2, count
     context.arc(x, y, radius, radian(angle_1), radian(angle_2), counterclockwise);    
 } 
 
+const backgroundDrawCorner = (x1, y1, x2, y2, x3, y3, color) => {
+    context.strokeStyle = color;
+    context.fillStyle = color;
+    context.beginPath();
+    context.moveTo(x1, y1);
+    context.lineTo(x2, y2);
+    context.lineTo(x_center, y_center);
+    context.lineTo(x3, y3);
+    context.closePath();
+    context.stroke();
+    context.fill();
+}
+
+const backgroundDrawSide = (x1, y1, x2, y2, color) => {
+    context.strokeStyle = color;
+    context.fillStyle = color;
+    context.beginPath();
+    context.moveTo(x1, y1);
+    context.lineTo(x_center, y_center);
+    context.lineTo(x2, y2);
+    context.closePath();
+    context.stroke();
+    context.fill();
+}
+
+
 /* function turnRight(degree) {
     angle = angle - degree;
     if (angle < 0) angle = angle + 360;
@@ -73,6 +99,11 @@ function DrawSpiral(context) {
 const drawBrawlStarsLogo = (context) => {
     x_center = context.canvas.width / 2;
     y_center = context.canvas.height / 2;
+    backgroundDrawCorner(1000, 1000, 500, 1000, 1000, 800, 'rgb(232,116,43)');
+    backgroundDrawCorner(0, 1000, 500, 1000, 0, 800, 'rgb(255,184,32)');
+    backgroundDrawCorner(1000, 0, 500, 0, 1000, 200, 'rgb(254,226,91)');
+    backgroundDrawSide(1000, 200, 1000, 800, 'rgb(255,184,32)')
+    backgroundDrawSide(0, 200, 0, 800, 'rgb(254,226,91)')
     context.fillStyle = 'rgb(0, 0, 0)';
     context.beginPath();
     context.arc(x_center, y_center, 400, 0, radian(360));
