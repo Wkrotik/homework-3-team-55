@@ -1,11 +1,3 @@
-/*
-    Code sample for SITE 1101 Principles of Information Systems 
-    (c)2024 by Araz Yusubov 
-    DISCLAIMER: All code examples we will look at are quick hacks intended to present working prototypes.
-    Hence they do not follow best practice of programming or software engineering.    
-*/
-
-// Global variables for Artist's position and orientation
 let x, y;
 let x_center;
 let y_center;
@@ -66,35 +58,6 @@ const backgroundDrawSide = (x1, y1, x2, y2, color) => {
     context.stroke();
     context.fill();
 }
-
-
-/* function turnRight(degree) {
-    angle = angle - degree;
-    if (angle < 0) angle = angle + 360;
-}
-
-function turnLeft(degree) {
-    angle = angle + degree;
-    if (angle > 360) angle = angle - 360;
-}
-
-function DrawSpiral(context) {
-    // Inspired by Express Course (2024) Lesson 29: For Loops with Artist
-    // https://studio.code.org/s/express-2024/lessons/29/levels/5
-
-    // The initial position is in the center of the canvas
-    x = context.canvas.width / 2;
-    y = context.canvas.height / 2;
-    // The initial orientation is zero degrees i.e. facing East
-    angle = 0.0; 
-    context.moveTo(x, y);
-    context.beginPath();
-    for (let counter = 3; counter < 600; counter += 3) {
-        moveForward(counter, context);
-        context.stroke();
-        turnRight(89);
-    }
-} */
 
 const drawBrawlStarsLogo = (context) => {
     x_center = context.canvas.width / 2;
