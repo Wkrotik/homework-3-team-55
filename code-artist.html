@@ -16,7 +16,7 @@
             <a href="index.html"><img src="./media/logo.png" id="logo"></a>
             <p>Team 55</p>
 
-            <button id="theme-toggle" onclick="toggleTheme()">Toogle Theme</button>
+            <button id="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
             <div class="menu-container">
 
                 <button class="menu-button" onclick="toggleMenu()">\/</button>
@@ -31,16 +31,30 @@
             
         </section>
         <div style="text-align:center">
+            <br><br><br><br>
+            <form>
+                <button type="button" id="LogoDraw">Click me to draw! :D</button>
+                <button type="button" id="LogoClear">Reset the drawing.</button>
+            </form>
+            <br>
+            <br>
             <canvas id="art-canvas" width="1000" height="1000">
                 Sorry ... your browser doesn't support the HTML5 canvas element.
-            </canvas>        
+            </canvas>
         </div>          
 
         <script type="text/javascript">
             // Get reference to the 2D context of the canvas
             const canvas = document.getElementById("art-canvas");
             const context = canvas.getContext("2d");
-            drawBrawlStarsLogo(context);
+            document.getElementById("LogoDraw").addEventListener("click", () => {
+                drawBrawlStarsLogo(context);
+            });
+
+            document.getElementById("LogoClear").addEventListener("click", () => {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                please_stop();
+            });
         </script>
     </body>
 </html>

@@ -62,22 +62,29 @@ const continueArc = (x_origin, y_origin, radius, degree, angle_1, angle_2, count
 } 
 
 // Function to draw a corner-shaped background with a specific color
-const backgroundDrawCorner = (x1, y1, x2, y2, x3, y3, color) => {
+async function backgroundDrawCorner(x1, y1, x2, y2, x3, y3, color) {
     chooseColor(color);
     context.moveTo(x1, y1);
+    await turn(350);
     context.lineTo(x2, y2);
+    await turn(350);
     context.lineTo(x_center, y_center);
+    await turn(350);
     context.lineTo(x3, y3);
-    newPath();
+    await turn(350);
+    await newPath();
 }
 
 // Function to draw a side-shaped background with a specific color
-const backgroundDrawSide = (x1, y1, x2, y2, color) => {
+async function backgroundDrawSide(x1, y1, x2, y2, color) {
     chooseColor(color);
     context.moveTo(x1, y1);
+    await turn(350);
     context.lineTo(x_center, y_center);
+    await turn(350);
     context.lineTo(x2, y2);
-    newPath();
+    await turn(350);
+    await newPath();
 }
 
 // Function to set the current fill and stroke color
@@ -87,39 +94,51 @@ const chooseColor = (color) => {
 }
 
 // Function to complete the current path, apply the stroke and fill, and start a new path
-const newPath = () => {
+async function newPath() {
     context.closePath();
-    context.stroke();
+    await turn(500);
     context.fill();
     context.beginPath();
 }
 
+// Creating break functions to make the drawing process animated
+const sleep = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function turn(ms) {
+    context.stroke();
+    await sleep(ms);
+}
+
 // Main function to draw the Brawl Stars logo
-const drawBrawlStarsLogo = (context) => {
+async function drawBrawlStarsLogo(context) {
     // Set the center coordinates of the canvas
     x_center = context.canvas.width / 2;
     y_center = context.canvas.height / 2;
     // Start drawing the logo
     context.beginPath();
     // Draw orange corners for the background
-    backgroundDrawCorner(1000, 1000, 500, 1000, 1000, 800, 'rgb(232,116,43)');
-    backgroundDrawCorner(0, 1000, 500, 1000, 0, 800, 'rgb(255,184,32)');
-    backgroundDrawCorner(1000, 0, 500, 0, 1000, 200, 'rgb(254,226,91)');
+    await backgroundDrawCorner(1000, 1000, 500, 1000, 1000, 800, 'rgb(232,116,43)');
+    await backgroundDrawCorner(0, 1000, 500, 1000, 0, 800, 'rgb(255,184,32)');
+    await backgroundDrawCorner(1000, 0, 500, 0, 1000, 200, 'rgb(254,226,91)');
+    await backgroundDrawCorner(0, 0, 500, 0, 0, 200, 'rgb(255,255,255)');
     // Draw orange sides for the background
-    backgroundDrawSide(1000, 200, 1000, 800, 'rgb(255,184,32)');
-    backgroundDrawSide(0, 200, 0, 800, 'rgb(254,226,91)');
+    await backgroundDrawSide(1000, 200, 1000, 800, 'rgb(255,184,32)');
+    await backgroundDrawSide(0, 200, 0, 800, 'rgb(254,226,91)');
     // Draw a "glare" part at the bottom (which creates 3D effect), the circle is covered by the black circle created later
     chooseColor('rgb(254,226,91)');
     DestDefine(x_center, y_center, 35, 110);
     context.arc(x, y, 400, 0, radian(360));
-    newPath();
+    await newPath();
     // Draw a black circular border
     chooseColor('rgb(0, 0, 0)');
     context.arc(x_center, y_center, 400, 0, radian(360));
-    newPath();
+    await newPath();
     // Draw the skull (without jaw)
     chooseColor('rgb(250, 188, 36)')
     context.arc(x_center, y_center, 345, radian(196), radian(8));
+    await turn(350);
     moveDest(x_center, y_center, 345, 196);
     x_endPoint = xDefine(x_center, 345, 8);
     y_endPoint = yDefine(y_center, 345, 8);
@@ -128,54 +147,67 @@ const drawBrawlStarsLogo = (context) => {
     x_controlPoint2 = xDefine(x_center, 510, 56);
     y_controlPoint2 = yDefine(y_center, 510, 56);
     context.bezierCurveTo(x_controlPoint1, y_controlPoint1, x_controlPoint2, y_controlPoint2, x_endPoint, y_endPoint);
+    await turn(350);
     // Draw the jaw part
     x = xDefine(x_center, 310, 140);
     y = yDefine(y_center, 260, 140);
     context.moveTo(x, y);
     lineDest(x, y, 40, 102);
+    await turn(350);
     continueArc(x, y, 36, 12, 192, 102, true);
+    await turn(350);
     DestDefine(x, y, 36, 102);
     lineDest(x, y, 324, 12);
+    await turn(350);
     continueArc(x, y, 36, 282, 102, 12, true);
+    await turn(350);
     DestDefine(x, y, 36, 12);
     lineDest(x, y, 40, 282);
+    await turn(350);
     x = xDefine(310, 140);
     y = yDefine(260, 140);
     context.lineTo(x, y);
     // Draw a pair of eyes
-    newPath();
+    await newPath();
     chooseColor('rgb(0, 0, 0)');
     DestDefine(x_center, y_center, 165, 176);
     context.arc(x, y, 105, 0, radian(360));
+    await turn(350);
     moveDest(x_center, y_center, 165, 28);
     DestDefine(x_center, y_center, 165, 28);
     context.arc(x, y, 105, 0, radian(360));
     // Draw a nose
-    newPath();
+    await newPath();
     moveDest(x_center, y_center, 90, 102);
     lineDest(x, y, 100, 72);
+    await turn(350);
     lineDest(x, y, 100, 192);
     // Draw eyebrows 
-    newPath();
+    await newPath();
     moveDest(x_center, y_center, 73, 255);
     for (let i = 0; i <= 1; i++) {
-        lineDest(x, y, 67, 235 - 180 * i)
+        lineDest(x, y, 67, 235 - 180 * i);
+        await turn(350);
         continueArc(x, y, 22, 145 + 180 * i, 325 - 180 * i, 145 + 180 * i, true);
+        await turn(350);
         moveDest(x, y, 22, 145 + 180 * i);
     }
-    newPath();
+    await newPath();
     moveDest(x_center, y_center, 73, 309);
     for (let i = 0; i <= 1; i++) {
-        lineDest(x, y, 67, 329 - 180 * i)
+        lineDest(x, y, 67, 329 - 180 * i);
+        await turn(350);
         continueArc(x, y, 22, 59 + 180 * i, 239 - 180 * i, 59 + 180 * i, false);
+        await turn(350);
         moveDest(x, y, 22, 59 + 180 * i);
     }
     // Draw the "glare" of the skull with the white ellipse
-    newPath();
+    await newPath();
     chooseColor('rgb(255, 255, 255)');
     DestDefine(x_center, y_center, 250, 250);
     context.ellipse(x, y, 120, 75, radian(340), 0, radian(360), false)
     context.closePath();
     context.stroke();
+    await turn(500);
     context.fill();
 }

@@ -35,6 +35,7 @@ body {
 
 body.dark-theme{
     background-color: #282828;
+    color: white;
 }
 
 h2{
