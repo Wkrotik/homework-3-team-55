@@ -73,5 +73,19 @@
 }
 
 .dropdown-content a:hover {
-    background-color: rgba(128, 128, 128, 0.151);
+    background-color: rgba(197, 196, 196, 0.075);
+}
+
+#theme-toggle{
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    background-color: var(--ada-red);
+    color: white ;
+    height: 100%;
+}
+
+#theme-toggle:hover{
+    opacity: 0.8;
 }

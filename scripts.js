@@ -1,3 +1,14 @@
+// Drop-down menu function
+function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+// Dark Theme
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+}
+
 // Function to add a 'flipped' class to a card when hovered over
 const flipCardOnHover = (card) => card.classList.add('flipped');
 
@@ -167,9 +178,4 @@ const drawBrawlStarsLogo = (context) => {
     context.closePath();
     context.stroke();
     context.fill();
-}
-
-function toggleMenu() {
-    const menu = document.getElementById("dropdownMenu");
-    menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
