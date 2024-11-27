@@ -6,12 +6,29 @@
 -->
 <html>
     <head>
-        <title>Web-Project</title>
+        <title>Homework 3: Programming art</title>
+        <link rel="icon" href="media/logo.png"></link>
         <link rel="stylesheet" href="styles.css">  
         <link rel="stylesheet" href="top-bar.css">
         <script type="text/javascript" src="scripts.js"></script>      
     </head>
     <body>
+        <section class="TopMenu">
+            <a href="index.html"><img src="./media/logo.png" id="logo"></a>
+            <p>Team 55</p>
 
-    </body>
-</html>
+            <button id="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+            <div class="menu-container">
+
+                <button class="menu-button" onclick="toggleMenu()">\/</button>
+    
+                <div id="dropdownMenu" class="dropdown-content">
+                    <a href="./hour-of-code.html">Hour of Code</a>
+                    <a href="./code-artist.html">Code Artist</a>
+                    <a href="./team-members.html">Team Members</a>
+                    <a href="./web-project.html">Web Project</a>
+                    <a href="./logicgates.html">Logic Gates</a>
+                </div>
+            </div>
+            
+        </section>

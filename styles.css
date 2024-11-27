@@ -90,23 +90,28 @@ h2{
     margin: 10px;
 }
 
-.project a {
+a {
     color: white; 
     text-decoration: none;      
     font-weight: bold;         
     text-align: center;
 }
 
-.projects a:hover {
-    color: var(--gruvbox-purple);   
+a:hover {
+    color: rgba(255, 255, 255, 0.815);   
     text-decoration: underline;      
 }
 
 
-.projects a:visited {
+a:visited {
     color: white;
     text-decoration: none;
     font-weight: bold;
+}
+
+a:active {
+    color: white;
+    text-decoration: none;
 }
 
 #team-text{
