@@ -121,6 +121,13 @@ a:active {
     text-align: center;
 }
 
+.divider {
+    border: 0;
+    height: 1px;
+    background: var(--gruvbox-gray); /* Use your desired color */
+    margin: 20px 0; /* Adjust the spacing as needed */
+}
+
 /* this is the main container for the members */
 
 .Members{
