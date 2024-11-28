@@ -142,23 +142,22 @@ a:active {
     flex-direction: column;
     justify-content: top;
     vertical-align: middle;
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: auto;
     text-align: inherit;
     color: var(--dark-blueish); 
     margin: 10px 20px 0 0;
     border-radius: 3%;
-    background-size: cover;
 }
 
 /* more specific attributes for each member */
-#Mubariz{
-    background-image: url("/media/human.jpg");
+/* #Mubariz{
+    background-image: url("/media/Mubariz.jpg");
     background-position: 23% 30%;
 }
 
 #Aykhan{
-    background-image: url("/media/human.jpg");
+    background-image: url("/media/Ayhan.jpg");
     background-position: 23% 30%;
 }
 
@@ -170,7 +169,7 @@ a:active {
 #Arhan{
     background-image: url("/media/human.jpg");
     background-position: 23% 30%;
-}
+} */
 
 h1 {
     font-size: 4rem;
@@ -281,11 +280,6 @@ h1 {
     text-align: center;
 }
 
-
-
-
-
-/* rubaba */ 
 
 .content-section {
     display: flex;
