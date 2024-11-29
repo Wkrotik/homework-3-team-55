@@ -113,6 +113,7 @@ async function turn(ms) {
 
 // Main function to draw the Brawl Stars logo
 async function drawBrawlStarsLogo(context) {
+    button.style.visibility = "hidden";
     // Set the center coordinates of the canvas
     x_center = context.canvas.width / 2;
     y_center = context.canvas.height / 2;
@@ -137,7 +138,7 @@ async function drawBrawlStarsLogo(context) {
     await newPath();
     // Draw the skull (without jaw)
     chooseColor('rgb(250, 188, 36)')
-    context.arc(x_center, y_center, 345, radian(196), radian(8));
+    context.arc(x_center, y_center, 345, radian(8), radian(196), true);
     await turn(350);
     moveDest(x_center, y_center, 345, 196);
     x_endPoint = xDefine(x_center, 345, 8);
@@ -210,4 +211,7 @@ async function drawBrawlStarsLogo(context) {
     context.stroke();
     await turn(500);
     context.fill();
+    button.style.visibility = "visible";
 }
+
+

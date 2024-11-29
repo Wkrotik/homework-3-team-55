@@ -34,28 +34,31 @@
         </section>
         <div style="text-align:center">
             <br><br><br><br>
-            <form>
-                <button type="button" id="LogoDraw">Click me to draw! :D</button>
-                <button type="button" id="LogoClear">Reset the drawing.</button>
-            </form>
-            <br>
-            <br>
             <canvas id="art-canvas" width="1000" height="1000">
                 Sorry ... your browser doesn't support the HTML5 canvas element.
             </canvas>
+            <br>
+            <br>
+            <form>
+                <button type="button" class="LogoDraw" id="LogoButton">Click me to draw! :D</button>
+            </form>
         </div>          
 
         <script type="text/javascript">
             // Get reference to the 2D context of the canvas
             const canvas = document.getElementById("art-canvas");
             const context = canvas.getContext("2d");
-            document.getElementById("LogoDraw").addEventListener("click", () => {
-                drawBrawlStarsLogo(context);
-            });
-
-            document.getElementById("LogoClear").addEventListener("click", () => {
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                please_stop();
+            const button = document.getElementById("LogoButton");
+            document.getElementById("LogoButton").addEventListener("click", () => {
+                if (button.class === "LogoDraw") {
+                    drawBrawlStarsLogo(context);
+                    button.class = "LogoClear";
+                    button.textContent = "Reset the drawing.";
+                } else {
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    button.class = "LogoDraw";
+                    button.textContent = "Click me to draw! :D";
+                }
             });
         </script>
     </body>
