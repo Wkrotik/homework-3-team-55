@@ -7,6 +7,8 @@ function toggleMenu() {
 // Dark Theme
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
+    canvas.classList.toggle('dark-theme');
+    button.classList.toggle('dark-theme');
 }
 
 // Function to add a 'flipped' class to a card when hovered over

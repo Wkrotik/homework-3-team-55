@@ -351,8 +351,19 @@ h1 {
     border-radius: 12.5%;
 }
 
+#art-canvas.dark-theme {
+    border-color: white;
+}
+
 #LogoButton {
     text-size-adjust: auto;
     padding: 40px 100px;
     font-size: 80px;
+    color: white;
+    background-color: black;
+}
+
+#LogoButton.dark-theme {
+    color: black;
+    background-color: white;
 }
