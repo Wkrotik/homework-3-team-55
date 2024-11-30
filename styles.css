@@ -37,7 +37,7 @@ body.dark-theme{
     color: white;
 }
 
-h2{
+h2 {
     color: var(--ada-red);
     font-size: 35px;
     text-align: center;
@@ -68,6 +68,28 @@ h2{
     margin: auto;
     text-indent: 40px;
     line-height: 160%;
+}
+
+.dark-theme .About-Us p {
+    color: #95dff5;
+}
+
+.TeamSection h2 {
+    margin-bottom: 0px;
+}
+
+.dark-theme h2, .dark-theme h1{
+    color: #ff8080;
+}
+
+.TeamSection p{
+    color: rgba(0, 0, 0, 0.515);
+    text-align: center;
+    margin-top: 1px;
+}
+
+.dark-theme .TeamSection p{
+    color: rgba(255, 255, 255, 0.815)
 }
 
 .projects ul{
@@ -102,7 +124,6 @@ a:hover {
     color: rgba(255, 255, 255, 0.815);   
     text-decoration: underline;      
 }
-
 
 a:visited {
     color: white;
@@ -230,6 +251,20 @@ h1 {
     font-size: 1.5rem; 
 }
 
+.dark-theme .card .front {
+    color: #282828;
+    background-color: #95dff5;
+}
+
+.dark-theme .card .back {
+    color: #282828;
+    background-color: #ff8080;
+}
+
+.card-container .front {
+    color: white;
+}
+
 .card.flipped .front {
     transform: rotateY(180deg);
 }
@@ -248,6 +283,10 @@ h1 {
     font-size: 2.5rem;
     color: var(--ada-red);
     margin-bottom: 20px;
+}
+
+.dark-theme .photos-section h2 {
+    color: #ff8080;
 }
 
 .photos-section p {
@@ -301,6 +340,9 @@ h1 {
     width: 100%;
 }
 
+.dark-theme .content-section p{
+    color: #95dff5;
+}
 
 .image-column {
     display: flex;
@@ -377,4 +419,20 @@ h1 {
 #LogoButton.dark-theme {
     color: black;
     background-color: white;
+}
+
+#hour-of-code-color {
+    color: white;
+}
+
+.dark-theme #hour-of-code-color {
+    color: #282828;
+}
+
+#organize-color {
+    color: white;
+}
+
+.dark-theme #organize-color {
+    color: #282828;
 }

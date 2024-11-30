@@ -50,7 +50,7 @@
             const context = canvas.getContext("2d");
             const button = document.getElementById("LogoButton");
             button.addEventListener("click", () => {
-                if (button.className === 'LogoDraw') {
+                if (button.className === 'LogoDraw' || button.className === 'LogoDraw dark-theme') {
                     drawBrawlStarsLogo(context);
                     button.classList.toggle("LogoDraw", false);
                     button.textContent = "Reset the drawing.";
