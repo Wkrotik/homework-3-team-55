@@ -40,7 +40,7 @@
     color: var(--gruvbox-fg);
     border: none;
     cursor: pointer;
-    background-image: url("/media/menu.png");
+    background-image: url("./media/menu.png");
     background-size: contain;  
     background-repeat: no-repeat;
     background-position: center;
