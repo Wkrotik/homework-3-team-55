@@ -126,24 +126,24 @@ async function drawBrawlStarsLogo(context) {
     y_center = context.canvas.height / 2;
     // Start drawing the logo
     context.beginPath();
-    // Draw orange corners for the background
+    // Draw orange/yellow/white corners for the background
     await backgroundDrawCorner(1000, 1000, 500, 1000, 1000, 800, 'rgb(232,116,43)');
     await backgroundDrawCorner(0, 1000, 500, 1000, 0, 800, 'rgb(255,184,32)');
     await backgroundDrawCorner(1000, 0, 500, 0, 1000, 200, 'rgb(254,226,91)');
     await backgroundDrawCorner(0, 0, 500, 0, 0, 200, 'rgb(255,255,255)');
-    // Draw orange sides for the background
+    // Draw orange/yellow sides for the background
     await backgroundDrawSide(1000, 200, 1000, 800, 'rgb(255,184,32)');
     await backgroundDrawSide(0, 200, 0, 800, 'rgb(254,226,91)');
-    // Draw a "glare" part at the bottom (which creates 3D effect), the circle is covered by the black circle created later
+    // Draw a "glare" part at the bottom (which creates 3D effect) using a 360 degrees arc, the circle is covered by the black circle created later
     chooseColor('rgb(254,226,91)');
     DestDefine(x_center, y_center, 35, 110);
     context.arc(x, y, 400, 0, radian(360));
     await newPath();
-    // Draw a black circular border
+    // Draw a black circular border using a 360 degrees arc
     chooseColor('rgb(0, 0, 0)');
     context.arc(x_center, y_center, 400, 0, radian(360));
     await newPath();
-    // Draw the skull (without jaw)
+    // Draw the skull (without jaw) using a normal arc and a cubic Bezier curve
     chooseColor('rgb(250, 188, 36)')
     context.arc(x_center, y_center, 345, radian(8), radian(196), true);
     await turn(350);
@@ -156,7 +156,7 @@ async function drawBrawlStarsLogo(context) {
     y_controlPoint2 = yDefine(y_center, 510, 56);
     context.bezierCurveTo(x_controlPoint1, y_controlPoint1, x_controlPoint2, y_controlPoint2, x_endPoint, y_endPoint);
     await turn(350);
-    // Draw the jaw part
+    // Draw the jaw part by combining lines and arcs
     x = xDefine(x_center, 310, 140);
     y = yDefine(y_center, 260, 140);
     context.moveTo(x, y);
@@ -175,7 +175,7 @@ async function drawBrawlStarsLogo(context) {
     x = xDefine(310, 140);
     y = yDefine(260, 140);
     context.lineTo(x, y);
-    // Draw a pair of eyes
+    // Draw a pair of eyes using 360 degree arcs
     await newPath();
     chooseColor('rgb(0, 0, 0)');
     DestDefine(x_center, y_center, 165, 176);
@@ -184,13 +184,13 @@ async function drawBrawlStarsLogo(context) {
     moveDest(x_center, y_center, 165, 28);
     DestDefine(x_center, y_center, 165, 28);
     context.arc(x, y, 105, 0, radian(360));
-    // Draw a nose
+    // Draw a nose by creating a triangle with 2 lines and ending path to connect initial and final points
     await newPath();
     moveDest(x_center, y_center, 90, 102);
     lineDest(x, y, 100, 72);
     await turn(350);
     lineDest(x, y, 100, 192);
-    // Draw eyebrows 
+    // Draw eyebrows by creating arcs with lines
     await newPath();
     moveDest(x_center, y_center, 73, 255);
     for (let i = 0; i <= 1; i++) {
