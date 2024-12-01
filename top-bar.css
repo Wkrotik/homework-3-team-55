@@ -66,11 +66,19 @@
     left: -125px;
 }
 
+.dark-theme .dropdown-content{
+    background-color: #282828;
+}
+
 .dropdown-content a {
     color: var(--ada-red);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+}
+
+.dark-theme .dropdown-content a{
+    color: #ff8080;
 }
 
 .dropdown-content a:hover {
