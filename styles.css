@@ -146,8 +146,8 @@ a:active {
 .divider {
     border: 0;
     height: 1px;
-    background: var(--gruvbox-gray); /* Use your desired color */
-    margin: 20px 0; /* Adjust the spacing as needed */
+    background: var(--gruvbox-gray);
+    margin: 20px 0;
 }
 
 /* this is the main container for the members */
@@ -171,27 +171,6 @@ a:active {
     margin: 10px 20px 0 0;
     border-radius: 3%;
 }
-
-/* more specific attributes for each member */
-/* #Mubariz{
-    background-image: url("/media/Mubariz.jpg");
-    background-position: 23% 30%;
-}
-
-#Aykhan{
-    background-image: url("/media/Ayhan.jpg");
-    background-position: 23% 30%;
-}
-
-#Rubaba{
-    background-image: url("/media/human.jpg");
-    background-position: 23% 30%;
-}
-
-#Arhan{
-    background-image: url("/media/human.jpg");
-    background-position: 23% 30%;
-} */
 
 h1 {
     font-size: 4rem;
