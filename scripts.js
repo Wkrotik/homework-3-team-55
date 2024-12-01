@@ -9,8 +9,6 @@ function toggleTheme() {
     document.body.classList.toggle('dark-theme');
     canvas.classList.toggle('dark-theme');
     button.classList.toggle('dark-theme');
-    // document.getElementsByClassName("About-Us").classList.toggle('dark-theme');
-    // document.getElementsByClassName("TeamSection").classList.toggle('dark-theme');
     document.getElementsByClassName("shadow").classList.toggle('dark-theme');
     document.getElementById("hour-of-code-color").classList.toggle('dark-theme');
     document.getElementById("organize-color").classList.toggle('dark-theme');

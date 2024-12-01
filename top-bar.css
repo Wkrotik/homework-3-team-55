@@ -13,11 +13,8 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.TopMenu p{
-    font-size: 40px;
-    color: var(--ada-red);
-    font-weight: bold;
-    margin-right: 55px;
+.dark-theme .TopMenu {
+    background-color: #95dff5;
 }
 
 .TopMenu img{
@@ -29,6 +26,11 @@
     font-size: 40px;
     color: white;
     font-weight: bold;
+    margin-right: 55px;
+}
+
+.dark-theme .TopMenu p{
+    color: #282828;
 }
 
 /* Dropdown Menu */
@@ -83,6 +85,11 @@
     background-color: var(--ada-red);
     color: white ;
     height: 100%;
+}
+
+.dark-theme #theme-toggle{
+    background-color: #ff8080;
+    color: #282828;
 }
 
 #theme-toggle:hover{
